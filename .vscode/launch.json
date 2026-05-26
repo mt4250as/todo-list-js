@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open 프론트엔드과제.html",
+            "file": "c:\\Users\\엄준석\\OneDrive\\Desktop\\2학년 과정\\.vscode\\자바스크립트\\프론트엔드과제.html"
+        }
+    ]
+}

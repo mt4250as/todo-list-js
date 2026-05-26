@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <input type="text" id="todoInput" placeholder="할 일을 입력해주세요.">
+    <button id="addBtn">추가</button>
+
+    <ul id="todoList"></ul>
+
+    <script>
+        // 화면에 있는 태그들을 손가락으로 콕 집어 가져옵니다 (교안 요구사항: querySelector)
+        const todoInput = document.querySelector('#todoInput');
+        const addBtn = document.querySelector('#addBtn');
+        const todoList = document.querySelector('#todoList');
+
+        // ⭐ 할 일을 목록에 실제로 추가하는 공통 기능(함수)을 만듭니다.
+        function createTodo() {
+            // 교안 요구사항: 입력창의 .value 값을 가져옵니다 (괄호 없음!)
+            const textValue = todoInput.value;
+
+            // 만약 아무것도 안 적고 버튼을 눌렀다면 함수를 종료합니다.
+            if (textValue.trim() === "") {
+                alert("내용을 입력해주세요!");
+                return;
+            }
+
+            // 목록에 들어갈 <li> 태그(리스트 한 항목)를 새로 만듭니다.
+            const li = document.createElement('li');
+            li.innerText = textValue; // 사용자가 쓴 글자를 새 리스트에 넣어줍니다.
+
+            // 부모 바구니(ul) 안에 방금 만든 <li>를 막내로 추가합니다.
+            todoList.appendChild(li);
+
+            // 다음 입력을 편하게 하도록 기존 입력창의 글자를 깨끗하게 지우고 커서를 줍니다.
+            todoInput.value = "";
+            todoInput.focus();
+        }
+
+        // 💡 이벤트 연결 1: 추가 버튼을 '클릭(onclick)'했을 때 실행
+        addBtn.onclick = function() {
+            createTodo();
+        };
+
+        // 💡 이벤트 연결 2: 입력창에서 키보드를 눌렀을 때 (교안 요구사항: onkeydown)
+        todoInput.onkeydown = function(event) {
+            // 엔터 키를 눌렀을 때만 실행
+            if (event.key === "Enter") {
+                createTodo();
+            }
+        };
+    </script>
+
+</body>
+</html>
