@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!!To-DO List!!</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input class="js-input" type="text" placeholder="할 일을 입력해주세요."
+    onkeydown="if (event.key === 'Enter'){addition()}">
+    <button class="js-addBtn" onclick="addition()">추가</button>
+    <div class="todoConta"></div>
+    
+    <script src="script.js">  </script>
+</body>
+</html>
+
